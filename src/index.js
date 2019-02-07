@@ -13,7 +13,7 @@ const useEventListener = (eventName, handler) => {
 
   useEffect(
     () => {
-      const eventListener = () => savedHandler.current();
+      const eventListener = event => savedHandler.current(event);
 
       global.addEventListener(eventName, eventListener);
       return () => {
@@ -39,7 +39,10 @@ const createStorage = provider => ({
   },
 });
 
-const createPersistedState = (key, provider = global.localStorage) => (initialState) => {
+const createPersistedState = (
+  key,
+  provider = global.localStorage
+) => (initialState) => {
   const globalState = useRef(null);
   const createStorageMemoized = useCallback(() => createStorage(provider), [
     provider,
