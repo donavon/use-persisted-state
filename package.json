@@ -1,6 +1,6 @@
 {
   "name": "use-persisted-state",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A custom React Hook thst provides a multi-instance, multi-tab/browser shared and persistent state.",
   "main": "dist/use-persisted-state.js",
   "umd:main": "dist/use-persisted-state.umd.js",
