@@ -1,0 +1,9 @@
+node_modules
+src
+.editorconfig
+.eslintrc
+.babelrc
+__tests__
+coverage
+.prettierrc
+.travis.yml
