@@ -1,10 +1,9 @@
 # use-persisted-state
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 A custom [React Hook](https://reactjs.org/docs/hooks-overview.html) that provides a multi-instance,
 multi-tab/browser shared and persistent state.
 
-[![npm version](https://badge.fury.io/js/use-persisted-state.svg)](https://badge.fury.io/js/use-persisted-state) [![Build Status](https://travis-ci.com/donavon/use-persisted-state.svg?branch=master)](https://travis-ci.com/donavon/use-persisted-state)
+[![npm version](https://badge.fury.io/js/use-persisted-state.svg)](https://badge.fury.io/js/use-persisted-state) [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 
 `use-persisted-state` is not a hook itself, but is a factory that accepts a storage `key`
@@ -19,7 +18,6 @@ that you can use as a direct replacement for `useState`.
 
 📑 Shares state w/multiple hooks on a page
 
-
 ## Requirement
 
 To use `use-persisted-state`, you must use `react@16.8.0` or greater which includes Hooks.
@@ -29,7 +27,6 @@ To use `use-persisted-state`, you must use `react@16.8.0` or greater which inclu
 ```sh
 $ npm i use-persisted-state
 ```
-
 
 ## Example
 
@@ -56,7 +53,7 @@ Let's replace the import of `react` with an import from `use-persisted-state`.
 And we'll call `createPersistedState` (the factory function).
 This will return a `useCounterState` hook that we can use in place of `useState`.
 
-The complete code is a follows.
+The complete code is as follows.
 
 ```js
 import createPersistedState from 'use-persisted-state';
@@ -75,15 +72,14 @@ const useCounter = initialCount => {
 export default useCounter;
 ```
 
-The state is shared with any other hook using the same key, either:
+The state is shared with any other hook using the same key, either
 on the same page, across tabs, or even browser windows.
 
-For example, open two copies of your app in two tabs.
-Any changes to state in one tab will be rendered on tne other tab.
+For example, open two copies of your app in two tabs or even two windows.
+Any changes to state in one tab will be rendered on the other tab.
 
 You can also close the browser and the next time you run your app,
 the state will be rendered as it was before you closed your browser.
-
 
 ## License
 

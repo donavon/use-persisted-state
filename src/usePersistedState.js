@@ -1,16 +1,10 @@
-import {
-  useState, useEffect, useCallback, useRef,
-} from 'react';
+import { useState, useEffect, useRef } from 'react';
+import useEventListener from '@use-it/event-listener';
 
 import createGlobalState from './createGlobalState';
-import useEventListener from './useEventListener';
-import createStorage from './createStorage';
 
-const usePersistedState = (initialState, key, provider) => {
+const usePersistedState = (initialState, key, { get, set }) => {
   const globalState = useRef(null);
-  const createStorageMemoized = useCallback(() => createStorage(provider), [provider]);
-  const { get, set } = createStorageMemoized();
-
   const [state, setState] = useState(() => get(key, initialState));
 
   // subscribe to `storage` change events
