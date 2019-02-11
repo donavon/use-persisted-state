@@ -7,3 +7,4 @@ __tests__
 coverage
 .prettierrc
 .travis.yml
+.all-contributorsrc
