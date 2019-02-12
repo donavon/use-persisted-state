@@ -24,6 +24,15 @@
         "tool",
         "code"
       ]
+    },
+    {
+      "login": "karol-majewski",
+      "name": "Karol Majewski",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/20233319?v=4",
+      "profile": "https://github.com/karol-majewski",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
