@@ -41,8 +41,8 @@ const useCounter = initialCount => {
 
   return {
     count,
-    increment: () => setCount(currentCount => currentCount + 1),
-    decrement: () => setCount(currentCount => currentCount - 1),
+    increment: () => setCount(count => currentCount + 1),
+    decrement: () => setCount(count => currentCount - 1),
   };
 };
 
@@ -64,8 +64,8 @@ const useCounter = initialCount => {
 
   return {
     count,
-    increment: () => setCount(currentCount => currentCount + 1),
-    decrement: () => setCount(currentCount => currentCount - 1),
+    increment: () => setCount(count => currentCount + 1),
+    decrement: () => setCount(count => currentCount - 1),
   };
 };
 
