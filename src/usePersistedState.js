@@ -9,9 +9,11 @@ const usePersistedState = (initialState, key, { get, set }) => {
 
   // subscribe to `storage` change events
   useEventListener('storage', ({ key: k, newValue }) => {
-    const newState = JSON.parse(newValue);
-    if (k === key && state !== newState) {
-      setState(newState);
+    if (k === key) {
+      const newState = JSON.parse(newValue);
+      if (state !== newState) {
+        setState(newState);
+      }
     }
   });
 
