@@ -27,30 +27,19 @@ const usePersistedState = (initialState, key, { get, set }) => {
     };
   }, []);
 
-  const persistValue = useCallback(newState => {
+  const persistentSetState = useCallback(newState => {
+    const newStateValue =
+      typeof newState === 'function' ? newState(state) : newState;    
+    
     // persist to localStorage
     set(key, newState);
+    
+    setState(newStateValue);
 
     // inform all of the other instances in this tab
     globalState.current.emit(newState);
-  }, [key, set]);
 
-  // Only persist to storage if state changes.
-  useEffect(
-    () => {
-      persistValue(state)
-    },
-    [state, persistValue]
-  );
-
-  const persistentSetState = useCallback(newState => {
-    const newStateValue =
-      typeof newState === 'function' ? newState(state) : newState;
-
-    persistValue(newStateValue);
-    setState(newStateValue);
-
-  }, [persistValue, state]);
+  }, [state, set, key]);
 
   return [state, persistentSetState];
 };
