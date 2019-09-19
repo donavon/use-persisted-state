@@ -3,7 +3,7 @@
 A custom [React Hook](https://reactjs.org/docs/hooks-overview.html) that provides a multi-instance,
 multi-tab/browser shared and persistent state.
 
-[![npm version](https://badge.fury.io/js/use-persisted-state.svg)](https://badge.fury.io/js/use-persisted-state) [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+[![npm version](https://badge.fury.io/js/use-persisted-state.svg)](https://badge.fury.io/js/use-persisted-state) [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
 
 
 `use-persisted-state` is not a hook itself, but is a factory that accepts a storage `key`
@@ -91,8 +91,14 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/all-contri
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-| [<img src="https://avatars3.githubusercontent.com/u/887639?v=4" width="100px;" alt="Donavon West"/><br /><sub><b>Donavon West</b></sub>](http://donavon.com)<br />[🚇](#infra-donavon "Infrastructure (Hosting, Build-Tools, etc)") [⚠️](https://github.com/donavon/use-persisted-state/commits?author=donavon "Tests") [💡](#example-donavon "Examples") [🤔](#ideas-donavon "Ideas, Planning, & Feedback") [🚧](#maintenance-donavon "Maintenance") [👀](#review-donavon "Reviewed Pull Requests") [🔧](#tool-donavon "Tools") [💻](https://github.com/donavon/use-persisted-state/commits?author=donavon "Code") |
-| :---: |
+<table>
+  <tr>
+    <td align="center"><a href="http://donavon.com"><img src="https://avatars3.githubusercontent.com/u/887639?v=4" width="100px;" alt="Donavon West"/><br /><sub><b>Donavon West</b></sub></a><br /><a href="#infra-donavon" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/donavon/use-persisted-state/commits?author=donavon" title="Tests">⚠️</a> <a href="#example-donavon" title="Examples">💡</a> <a href="#ideas-donavon" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-donavon" title="Maintenance">🚧</a> <a href="#review-donavon" title="Reviewed Pull Requests">👀</a> <a href="#tool-donavon" title="Tools">🔧</a> <a href="https://github.com/donavon/use-persisted-state/commits?author=donavon" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/karol-majewski"><img src="https://avatars1.githubusercontent.com/u/20233319?v=4" width="100px;" alt="Karol Majewski"/><br /><sub><b>Karol Majewski</b></sub></a><br /><a href="https://github.com/donavon/use-persisted-state/commits?author=karol-majewski" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/dispix"><img src="https://avatars1.githubusercontent.com/u/11643701?v=4" width="100px;" alt="Octave Raimbault"/><br /><sub><b>Octave Raimbault</b></sub></a><br /><a href="https://github.com/donavon/use-persisted-state/commits?author=dispix" title="Code">💻</a></td>
+  </tr>
+</table>
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
