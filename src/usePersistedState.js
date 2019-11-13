@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import useEventListener from '@use-it/event-listener';
 
 import createGlobalState from './createGlobalState';
