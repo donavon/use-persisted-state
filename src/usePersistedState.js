@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { dequal } from 'dequal/lite';
 import useEventListener from '@use-it/event-listener';
 
 import createGlobalState from './createGlobalState';
@@ -11,7 +12,7 @@ const usePersistedState = (initialState, key, { get, set }) => {
   useEventListener('storage', ({ key: k, newValue }) => {
     if (k === key) {
       const newState = JSON.parse(newValue);
-      if (state !== newState) {
+      if (!dequal(state, newState)) {
         setState(newState);
       }
     }

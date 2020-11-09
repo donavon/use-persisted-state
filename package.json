@@ -63,6 +63,7 @@
     }
   },
   "dependencies": {
-    "@use-it/event-listener": "^0.1.2"
+    "@use-it/event-listener": "^0.1.2",
+    "dequal": "^2.0.2"
   }
 }
