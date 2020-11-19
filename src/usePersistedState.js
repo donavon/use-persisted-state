@@ -25,7 +25,7 @@ const usePersistedState = (initialState, key, { get, set }) => {
     return () => {
       globalState.current.deregister();
     };
-  }, []);
+  }, [initialState, key]);
 
   const persistentSetState = useCallback(
     (newState) => {
