@@ -69,6 +69,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "vitordino",
+      "name": "Vitor Dino",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/5063967?v=4",
+      "profile": "https://vitordino.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
