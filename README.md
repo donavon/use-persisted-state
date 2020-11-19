@@ -100,6 +100,7 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/all-contri
     <td align="center"><a href="https://morello.dev"><img src="https://avatars0.githubusercontent.com/u/19588613?v=4" width="100px;" alt=""/><br /><sub><b>Dennis Morello</b></sub></a><br /><a href="https://github.com/donavon/use-persisted-state/commits?author=dennismorello" title="Code">💻</a></td>
     <td align="center"><a href="http://fdetry.be"><img src="https://avatars0.githubusercontent.com/u/3214565?v=4" width="100px;" alt=""/><br /><sub><b>Florent</b></sub></a><br /><a href="https://github.com/donavon/use-persisted-state/commits?author=Fridus" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/mungojam"><img src="https://avatars1.githubusercontent.com/u/3154635?v=4" width="100px;" alt=""/><br /><sub><b>Mark Adamson</b></sub></a><br /><a href="https://github.com/donavon/use-persisted-state/commits?author=mungojam" title="Code">💻</a></td>
+    <td align="center"><a href="https://vitordino.com"><img src="https://avatars2.githubusercontent.com/u/5063967?v=4" width="100px;" alt=""/><br /><sub><b>Vitor Dino</b></sub></a><br /><a href="https://github.com/donavon/use-persisted-state/commits?author=vitordino" title="Code">💻</a></td>
   </tr>
 </table>
 
