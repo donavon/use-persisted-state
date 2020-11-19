@@ -6,6 +6,19 @@ const mockStorage = {
   getItem: key => (key === null ? null : JSON.stringify(key)),
   setItem: () => {},
 };
+class Provider {
+  constructor() {
+    this.storage = {};
+  }
+
+  getItem(key) {
+    return this.storage[key];
+  }
+
+  setItem(key, value) {
+    this.storage[key] = value;
+  }
+}
 
 describe('createStorage', () => {
   test('returns a Storage object with a get method', () => {
@@ -33,4 +46,25 @@ describe('createStorage', () => {
 
     spy.mockRestore();
   });
+
+  describe('Provider', () => {
+    test('return a Storage object of type string', () => {
+      const mockProvider = new Provider();
+      const { get, set } = createStorage(mockProvider);
+      set('key', 'foo');
+      expect(get('key')).toBe('foo');
+    })
+    test('return a Storage object of type null', () => {
+      const mockProvider = new Provider();
+      const { get, set } = createStorage(mockProvider);
+      set('key', null);
+      expect(get('key')).toBe(null);
+    })
+    test('return a Storage object of type undefined', () => {
+      const mockProvider = new Provider();
+      const { get, set } = createStorage(mockProvider);
+      set('key', undefined);
+      expect(get('key')).toBe(undefined);
+    })
+  })
 });
