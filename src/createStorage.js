@@ -1,4 +1,4 @@
-const createStorage = provider => ({
+const createStorage = (provider) => ({
   get(key, defaultValue) {
     const json = provider.getItem(key);
     // eslint-disable-next-line no-nested-ternary
