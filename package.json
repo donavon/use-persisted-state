@@ -41,6 +41,7 @@
     "babel-jest": "^23.6.0",
     "eslint": "^5.10.0",
     "eslint-config-amex": "^9.0.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "jest": "^23.6.0",
     "jest-dom": "^3.0.0",
     "microbundle": "^0.12.4",
