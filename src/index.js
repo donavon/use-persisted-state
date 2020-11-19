@@ -4,11 +4,20 @@ import usePersistedState from './usePersistedState';
 import createStorage from './createStorage';
 
 const getProvider = () => {
-  if (typeof global !== 'undefined') return global.localStorage;
+  if (typeof global !== 'undefined' && global.localStorage) {
+    return global.localStorage;
+  }
   // eslint-disable-next-line no-undef
-  if (typeof globalThis !== 'undefined') return globalThis.localStorage;
-  if (typeof window !== 'undefined') return window.localStorage;
-  if (typeof localStorage !== 'undefined') return localStorage;
+  if (typeof globalThis !== 'undefined' && globalThis.localStorage) {
+    // eslint-disable-next-line no-undef
+    return globalThis.localStorage;
+  }
+  if (typeof window !== 'undefined' && window.localStorage) {
+    return window.localStorage;
+  }
+  if (typeof localStorage !== 'undefined') {
+    return localStorage;
+  }
   return null;
 };
 
