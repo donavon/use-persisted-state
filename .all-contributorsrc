@@ -51,6 +51,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Fridus",
+      "name": "Florent",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3214565?v=4",
+      "profile": "http://fdetry.be",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
