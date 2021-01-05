@@ -3,7 +3,10 @@ import useEventListener from '@use-it/event-listener';
 
 import createGlobalState from './createGlobalState';
 
-const usePersistedState = (initialState, key, { get, set }) => {
+const getNewStateValue = (nextValue, state) =>
+  typeof nextValue === 'function' ? nextValue(state) : nextValue;
+
+const usePersistedState = (initialState, reducer, key, { get, set }) => {
   const globalState = useRef(null);
   const [state, setState] = useState(() => get(key, initialState));
 
@@ -28,9 +31,10 @@ const usePersistedState = (initialState, key, { get, set }) => {
   }, [initialState, key]);
 
   const persistentSetState = useCallback(
-    (newState) => {
-      const newStateValue =
-        typeof newState === 'function' ? newState(state) : newState;
+    (nextValue) => {
+      const newStateValue = reducer
+        ? reducer(state, nextValue)
+        : getNewStateValue(nextValue, state);
 
       // persist to localStorage
       set(key, newStateValue);
@@ -38,9 +42,9 @@ const usePersistedState = (initialState, key, { get, set }) => {
       setState(newStateValue);
 
       // inform all of the other instances in this tab
-      globalState.current.emit(newState);
+      globalState.current.emit(nextValue);
     },
-    [state, set, key]
+    [state, set, key, reducer]
   );
 
   return [state, persistentSetState];
