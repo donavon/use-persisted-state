@@ -21,9 +21,13 @@ const getProvider = () => {
   return null;
 };
 
-const createPersistedState = (key, provider = getProvider()) => {
+const createPersistedState = (
+  key,
+  provider = getProvider(),
+  { parseReviver } = {}
+) => {
   if (provider) {
-    const storage = createStorage(provider);
+    const storage = createStorage(provider, { parseReviver });
     return (initialState) => usePersistedState(initialState, key, storage);
   }
   return useState;
