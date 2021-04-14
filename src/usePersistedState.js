@@ -20,12 +20,12 @@ const usePersistedState = (initialState, key, { get, set }) => {
   // only called on mount
   useEffect(() => {
     // register a listener that calls `setState` when another instance emits
-    globalState.current = createGlobalState(key, setState, initialState);
+    globalState.current = createGlobalState(key, setState, get(key, initialState));
 
     return () => {
       globalState.current.deregister();
     };
-  }, [initialState, key]);
+  }, [initialState, get, key]);
 
   const persistentSetState = useCallback(
     (newState) => {
