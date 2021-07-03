@@ -81,6 +81,14 @@ Any changes to state in one tab will be rendered on the other tab.
 You can also close the browser and the next time you run your app,
 the state will be rendered as it was before you closed your browser.
 
+Besides localStorage, we also provide built-in support for `sessionStorage`, 
+just import `useSessionStorage` and pass its call as the second parameter.
+
+```js
+import createPersistedState, { useSessionStorage } from 'use-persisted-state';
+const useCounterState = createPersistedState('count', useSessionStorage());
+```
+
 ## License
 
 **[MIT](LICENSE)** Licensed

@@ -21,6 +21,24 @@ const getProvider = () => {
   return null;
 };
 
+const useSessionStorage = () => {
+  if (typeof global !== 'undefined' && global.sessionStorage) {
+    return global.sessionStorage;
+  }
+  // eslint-disable-next-line no-undef
+  if (typeof globalThis !== 'undefined' && globalThis.sessionStorage) {
+    // eslint-disable-next-line no-undef
+    return globalThis.sessionStorage;
+  }
+  if (typeof window !== 'undefined' && window.sessionStorage) {
+    return window.sessionStorage;
+  }
+  if (typeof sessionStorage !== 'undefined') {
+    return sessionStorage;
+  }
+  return null;
+}
+
 const createPersistedState = (key, provider = getProvider()) => {
   if (provider) {
     const storage = createStorage(provider);
@@ -30,3 +48,5 @@ const createPersistedState = (key, provider = getProvider()) => {
 };
 
 export default createPersistedState;
+
+export { useSessionStorage }
