@@ -30,7 +30,8 @@
     "utils",
     "lib",
     "persistent",
-    "localstorage"
+    "localstorage",
+    "sessionstorage"
   ],
   "author": "donavon",
   "devDependencies": {
