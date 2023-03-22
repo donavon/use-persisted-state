@@ -29,16 +29,19 @@ const usePersistedState = (initialState, key, { get, set }) => {
 
   const persistentSetState = useCallback(
     (newState) => {
-      const newStateValue =
-        typeof newState === 'function' ? newState(state) : newState;
-
-      // persist to localStorage
-      set(key, newStateValue);
-
-      setState(newStateValue);
-
-      // inform all of the other instances in this tab
-      globalState.current.emit(newState);
+      // persist to localStorage, set state, then inform all of the other instances in this tab
+      if (typeof newState === 'function') {
+        setState((prevState) => {
+          const newStateValue = newState(prevState);
+          set(key, newStateValue);
+          globalState.current.emit(newStateValue);
+          return newStateValue;
+        });
+      } else {
+        set(key, newState);
+        setState(newState);
+        globalState.current.emit(newState);
+      }
     },
     [state, set, key]
   );
