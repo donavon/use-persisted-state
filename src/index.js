@@ -29,4 +29,4 @@ const createPersistedState = (key, provider = getProvider()) => {
   return useState;
 };
 
-export default createPersistedState;
+export { usePersistedState, createPersistedState as default };
